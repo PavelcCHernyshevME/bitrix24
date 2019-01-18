@@ -1,0 +1,19 @@
+﻿# файл .gitignore
+
+# игнорируем папку битрикс
+/bitrix/*
+
+# исключаем из игнора папки  php_interface
+!/bitrix/php_interface/
+
+# различные файлы и папки
+/logs/
+/upload/
+/test/
+/.idea/
+/images/
+*.DS_Store
+.htaccess
+.htaccess.restore
+robots.txt
+web.config
