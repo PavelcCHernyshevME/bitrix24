@@ -10,3 +10,6 @@ global $APPLICATION;
 if ($APPLICATION->GetCurPage(true) == '/BXJS/index.php') {
     CUtil::InitJSCore(['my_ext']);
 }
+if ($APPLICATION->GetCurPage(true) == '/BXJS/ajax.php') {
+    CUtil::InitJSCore(['my_ajax']);
+}

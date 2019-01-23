@@ -15,6 +15,12 @@ $arJsLibs = [
         'css' => '/local/php_interface/include/js_lib/my_ext.css',
         'lang' => '/local/php_interface/include/js_lib/lang/' . LANGUAGE_ID . '/my_ext.php',
         'rel' => []
+    ],
+    'my_ajax' => [
+        'js' => '/local/php_interface/include/js_lib/my_ajax.js',
+        'css' => '/local/php_interface/include/js_lib/my_ajax.css',
+        'lang' => '/local/php_interface/include/js_lib/lang/' . LANGUAGE_ID . '/my_ajax.php',
+        'rel' => []
     ]
 ];
 foreach ($arJsLibs as $jsLibName => $options) {
