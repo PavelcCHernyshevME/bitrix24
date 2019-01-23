@@ -10,17 +10,19 @@ AddEventHandler("main", "OnEpilog", Array("Eventhandlers", "OnEpilogHandler"));
 
 
 class Eventhandlers {
-    function OnEpilogHandler() {
-        $arJsLibs = [
-            'my_ext' => [
-                'js' => '/local/php_interface/include/js_lib/my_ext.js',
-                'css' => '/local/php_interface/include/js_lib/my_ext.css',
-                'lang' => '/local/php_interface/include/js_lib/lang/' . LANGUAGE_ID . '/my_ext.php',
-                'rel' => []
-            ]
-        ];
-        foreach ($arJsLibs as $jsLibName => $options) {
-            CJSCore::RegisterExt($jsLibName, $options);
+    function OnEpilogHandler()
+    {
+        /**
+         * регистрируем js библиотеки
+         */
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/js_lib_register.php')) {
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/js_lib_register.php';
+        }
+        /**
+         * подключаем js библиотеки
+         */
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/js_lib_including.php')) {
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/js_lib_including.php';
         }
     }
 }
