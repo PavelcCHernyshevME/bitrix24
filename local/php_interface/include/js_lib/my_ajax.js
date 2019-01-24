@@ -8,8 +8,19 @@ BX.ready(
                 onsuccess: function ($data) {
                     let className = $data.CLASS;
                     let text = $data.TEXT;
-                    let includingData = '<div class="' + className + '">' + text + '</div>'
-                    BX('block-for-answer').innerHTML = includingData;
+                    let createdDiv = BX.create('div',
+                        {
+                            attrs: {
+                                'class': className
+                            },
+                            text: text
+                        }
+                    );
+                    BX.adjust(BX('block-for-answer'),
+                        {
+                            children: [createdDiv]
+                        }
+                    )
                 },
                 onfailure: function ($data) {
                     console.error($data)
