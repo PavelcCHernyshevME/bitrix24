@@ -13,3 +13,6 @@ if ($APPLICATION->GetCurPage(true) == '/BXJS/index.php') {
 if ($APPLICATION->GetCurPage(true) == '/BXJS/ajax.php') {
     CUtil::InitJSCore(['my_ajax']);
 }
+if ($APPLICATION->GetCurPage(true) == '/BXJS/popup.php') {
+    CUtil::InitJSCore(['popup', 'my_popup', 'my_ajax']);
+}

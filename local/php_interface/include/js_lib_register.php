@@ -11,15 +11,20 @@
  */
 $arJsLibs = [
     'my_ext' => [
-        'js' => '/local/php_interface/include/js_lib/my_ext.js',
-        'css' => '/local/php_interface/include/js_lib/my_ext.css',
-        'lang' => '/local/php_interface/include/js_lib/lang/' . LANGUAGE_ID . '/my_ext.php',
+        'js' => '/local/php_interface/include/js_lib/my_ext/my_ext.js',
+        'css' => '/local/php_interface/include/js_lib/my_ext/my_ext.css',
+        'lang' => '/local/php_interface/include/js_lib/my_ext/lang/' . LANGUAGE_ID . '/my_ext.php',
         'rel' => []
     ],
     'my_ajax' => [
-        'js' => '/local/php_interface/include/js_lib/my_ajax.js',
-        'css' => '/local/php_interface/include/js_lib/my_ajax.css',
-        'lang' => '/local/php_interface/include/js_lib/lang/' . LANGUAGE_ID . '/my_ajax.php',
+        'js' => '/local/php_interface/include/js_lib/my_ajax/my_ajax.js',
+        'css' => '/local/php_interface/include/js_lib/my_ajax/my_ajax.css',
+        'lang' => '/local/php_interface/include/js_lib/my_ajax/lang/' . LANGUAGE_ID . '/my_ajax.php',
+        'rel' => []
+    ],
+    'my_popup' => [
+        'js' => '/local/php_interface/include/js_lib/my_popup/my_popup.js',
+        'css' => '/local/php_interface/include/js_lib/my_popup/my_popup.css',
         'rel' => []
     ]
 ];
