@@ -16,3 +16,6 @@ if ($APPLICATION->GetCurPage(true) == '/BXJS/ajax.php') {
 if ($APPLICATION->GetCurPage(true) == '/BXJS/popup.php') {
     CUtil::InitJSCore(['popup', 'my_popup', 'my_ajax']);
 }
+if ($APPLICATION->GetCurPage(true) == '/BXJS/viewer.php') {
+    CUtil::InitJSCore(['viewer', 'my_slider']);
+}

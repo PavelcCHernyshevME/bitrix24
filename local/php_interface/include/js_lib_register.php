@@ -26,6 +26,11 @@ $arJsLibs = [
         'js' => '/local/php_interface/include/js_lib/my_popup/my_popup.js',
         'css' => '/local/php_interface/include/js_lib/my_popup/my_popup.css',
         'rel' => []
+    ],
+    'my_slider' => [
+        'js' => '/local/php_interface/include/js_lib/my_slider/my_slider.js',
+        'css' => '/local/php_interface/include/js_lib/my_slider/my_slider.css',
+        'rel' => []
     ]
 ];
 foreach ($arJsLibs as $jsLibName => $options) {
