@@ -782,7 +782,7 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 					</span>
 					<span class="crm-item-cell-view"<?= ($bInitEditable && empty($fixedProductName)) ? ' style="display: none;"' : '' ?>>
 						<span class="crm-table-name-left">
-							<span class="crm-item-move-btn view-mode"></span><span id="<?= ($rowID.'_NUM_v') ?>" class="crm-item-num"><?=($i+1).'.'?></span>
+							<span class="crm-item-move-btn view-mode"></span><span id="<?= ($rowID.'_NUM_v') ?>" class="crm-item-num"><?=($i+1).'.*'?></span>
 						</span>
 						<span class="crm-item-txt-wrap">
 							<div id="<?=$rowID.'_PRODUCT_NAME_v'?>" class="crm-item-name-txt"><?=$htmlValues['PRODUCT_NAME']?></div>
