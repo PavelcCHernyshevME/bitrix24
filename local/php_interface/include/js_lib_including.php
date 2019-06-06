@@ -19,3 +19,6 @@ if ($APPLICATION->GetCurPage(true) == '/BXJS/popup.php') {
 if ($APPLICATION->GetCurPage(true) == '/BXJS/viewer.php') {
     CUtil::InitJSCore(['viewer', 'my_slider']);
 }
+if (strpos($APPLICATION->GetCurPage(false), '/crm/company/details/') === 0) {
+    CUtil::InitJSCore(['my_btnlink']);
+}
