@@ -917,7 +917,13 @@ if (CSalePaySystemAction::GetParamValue('QUOTE_EN_SIGN_SHOW') == 'Y')
 			}
 		}
 
-		$sellerDirPos = CSalePdf::prepareToPdf(CSalePaySystemAction::GetParamValue("SELLER_DIR_POS", false));
+		$sellerDirPos = HTMLToTxt(
+			preg_replace(
+				array('#</div>\s*<div[^>]*>#i', '#</?div>#i'),
+				array('<br>', '<br>'),
+				CSalePdf::prepareToPdf(CSalePaySystemAction::GetParamValue("SELLER_DIR_POS", false))
+			), '', array(), 0
+		);
 		if ($isDirSign && $pdf->GetStringWidth($sellerDirPos) <= 160)
 			$pdf->SetY($pdf->GetY() + min($signHeight, 30) - 15);
 		$pdf->MultiCell(150, 15, $sellerDirPos, 0, 'L');
@@ -963,7 +969,13 @@ if (CSalePaySystemAction::GetParamValue('QUOTE_EN_SIGN_SHOW') == 'Y')
 			}
 		}
 
-		$sellerAccPos = CSalePdf::prepareToPdf(CSalePaySystemAction::GetParamValue("SELLER_ACC_POS", false));
+		$sellerAccPos = HTMLToTxt(
+			preg_replace(
+				array('#</div>\s*<div[^>]*>#i', '#</?div>#i'),
+				array('<br>', '<br>'),
+				CSalePdf::prepareToPdf(CSalePaySystemAction::GetParamValue("SELLER_ACC_POS", false))
+			), '', array(), 0
+		);
 		if ($isAccSign && $pdf->GetStringWidth($sellerAccPos) <= 160)
 			$pdf->SetY($pdf->GetY() + min($signHeight, 30) - 15);
 		$pdf->MultiCell(150, 15, $sellerAccPos, 0, 'L');

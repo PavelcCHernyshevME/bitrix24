@@ -3,11 +3,12 @@ define("BX_USE_MYSQLI", true);
 define("DBPersistent", false);
 $DBType = "mysql";
 $DBHost = "localhost";
-$DBLogin = "chernysh_db";
-$DBPassword = "j5JBdGp2";
-$DBName = "chernysh_db";
-$DBDebug = false;
+$DBLogin = "u54988_root";
+$DBPassword = "bitrix123";
+$DBName = "u54988_bestrank";
+$DBDebug = true;
 $DBDebugToFile = false;
+define("MYSQL_TABLE_TYPE", "INNODB");
 
 @ini_set("memory_limit", "1024M");
 define("DELAY_DB_CONNECT", true);

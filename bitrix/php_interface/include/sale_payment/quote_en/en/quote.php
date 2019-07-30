@@ -1,6 +1,4 @@
 <?
-global $MESS;
-
 $MESS["SBLP_DTITLE"] = "Quote (English)";
 $MESS["SBLP_DDESCR"] = "Quote print form. The form will open in a new window.";
 
