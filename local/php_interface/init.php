@@ -10,3 +10,8 @@ function dump($data) {
     echo '</pre>';
 }
 
+function getRandomUserId(array $users) {
+    $userPos = rand(0, count($users) - 1);
+    return $users[$userPos];
+}
+
