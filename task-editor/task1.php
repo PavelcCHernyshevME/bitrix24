@@ -5,7 +5,7 @@ $userColl = \Bitrix\Main\UserTable::getList()->fetchCollection();
 $userIds = $userColl->getIdList();
 $dbRes = CTasks::GetList();
 $arTtasks = [];
-function createTask($respons, $creator, $title, $desc, $deadline)
+function createTask($respons, $creator, $title, $desc, $deadline, $parentId)
 {
     $task = new \Bitrix\Tasks\Item\Task();
     $task->setData([
@@ -13,7 +13,8 @@ function createTask($respons, $creator, $title, $desc, $deadline)
         'DESCRIPTION' => $desc,
         'CREATED_BY' => $creator,
         'RESPONSIBLE_ID' => $respons,
-        'DEADLINE' => $deadline
+        'DEADLINE' => $deadline,
+        'PARENT_ID' => $parentId
     ]);
     $task->save();
 }
@@ -22,8 +23,8 @@ $deadlineTS = time() + 86400 * 31;
 $date = \Bitrix\Main\Type\DateTime::createFromTimestamp($deadlineTS);
 $deadline = $date->format('d.m.Y H:i:s');
 while ($task = $dbRes->Fetch()) {
-    createTask(getRandomUserId($userIds), getRandomUserId($userIds), 'TITLE ' . ++$counter, 'DESC ' . $counter, $deadline);
-    createTask(getRandomUserId($userIds), getRandomUserId($userIds), 'TITLE ' . ++$counter, 'DESC ' . $counter, $deadline);
+    createTask(getRandomUserId($userIds), getRandomUserId($userIds), 'TITLE ' . ++$counter, 'DESC ' . $counter, $deadline, $task['ID']);
+    createTask(getRandomUserId($userIds), getRandomUserId($userIds), 'TITLE ' . ++$counter, 'DESC ' . $counter, $deadline, $task['ID']);
 }
 ?>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
