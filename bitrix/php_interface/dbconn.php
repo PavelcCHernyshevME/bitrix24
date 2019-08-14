@@ -10,6 +10,12 @@ $DBDebug = true;
 $DBDebugToFile = false;
 define("MYSQL_TABLE_TYPE", "INNODB");
 
+$SERVER_PORT = 80;
+$_SERVER["SERVER_PORT"] = 80;
+$_SERVER["HTTP_HOST"] = "u54988.onhh.ru";
+$HTTP_HOST = "u54988.onhh.ru";
+
+
 @ini_set("memory_limit", "1024M");
 define("DELAY_DB_CONNECT", true);
 define("CACHED_b_file", 3600);

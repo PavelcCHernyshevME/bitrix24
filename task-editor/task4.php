@@ -15,7 +15,6 @@ try {
         while ($checkListItem = $checkLDBRes->fetch()) {
             $taskMemb = new CTaskMembers();
             if ($checkListItem['IS_COMPLETE'] == 'N') {
-                dump($task['ID']);
                 $oTask = CTaskItem::getInstance($task['ID'], $task['CREATED_BY']);
                 for ($i = 0; $i < 3; $i++) {
                     CTaskElapsedItem::add($oTask, [

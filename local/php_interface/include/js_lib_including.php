@@ -5,7 +5,7 @@
  * Date: 23.01.2019
  * Time: 9:32
  */
-global $APPLICATION;
+global $APPLICATION, $USER;
 
 if ($APPLICATION->GetCurPage(true) == '/BXJS/index.php') {
     CUtil::InitJSCore(['my_ext']);
@@ -21,4 +21,8 @@ if ($APPLICATION->GetCurPage(true) == '/BXJS/viewer.php') {
 }
 if (strpos($APPLICATION->GetCurPage(false), '/crm/company/details/') === 0) {
     CUtil::InitJSCore(['my_btnlink']);
+}
+
+if (isPageTaskDetail($APPLICATION->GetCurPage(false))) {
+    CUtil::InitJSCore(['my_taskdetail']);
 }

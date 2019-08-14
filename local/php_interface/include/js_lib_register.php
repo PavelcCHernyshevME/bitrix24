@@ -36,6 +36,11 @@ $arJsLibs = [
         'js' => '/local/php_interface/include/js_lib/my_btnlink/my_btnlink.js',
         'css' => '/local/php_interface/include/js_lib/my_btnlink/my_btnlink.css',
         'rel' => []
+    ],
+    'my_taskdetail' => [
+        'js' => '/local/php_interface/include/js_lib/my_taskdetail/my_taskdetail.js',
+        'css' => '/local/php_interface/include/js_lib/my_taskdetail/my_taskdetail.css',
+        'rel' => []
     ]
 ];
 foreach ($arJsLibs as $jsLibName => $options) {

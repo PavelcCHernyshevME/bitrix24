@@ -18,3 +18,10 @@ function getRandomUserId(array $users) {
     return $users[$userPos];
 }
 
+function isPageTaskDetail($url)
+{
+    $regExpr = '/\/company\/personal\/user\/([\d]+)\/tasks\/task\/view\/([\d]+)\//';
+    $matches = [];
+    preg_match($regExpr, $url, $matches);
+    return count($matches) > 0;
+}
