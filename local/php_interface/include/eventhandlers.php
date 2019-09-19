@@ -38,17 +38,21 @@ class Eventhandlers {
      */
     function onTaskAdd($taskId, $fields)
     {
-        $creatorId = $fields['CREATED_BY'];
-        $createdDate = $fields['CREATED_DATE'];
-        \Bitrix\Main\Loader::includeModule('highloadblock');
-        $hl = Bitrix\Highloadblock\HighloadBlockTable::getById(TASKS_STACK_HL_ID)->fetch();
-        $hlEntity = \Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hl);
-        $hlClass = $hlEntity->getDataClass();
-        $hlClass::add([
-            'UF_TASK_ID' => $taskId,
-            'UF_CREATED_BY' => $creatorId,
-            'UF_CREATED_DATE' => $createdDate,
-        ]);
+        try {
+            $creatorId = $fields['CREATED_BY'];
+            $createdDate = $fields['CREATED_DATE'];
+            \Bitrix\Main\Loader::includeModule('highloadblock');
+            $hl = Bitrix\Highloadblock\HighloadBlockTable::getById(TASKS_STACK_HL_ID)->fetch();
+            $hlEntity = \Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hl);
+            $hlClass = $hlEntity->getDataClass();
+            $hlClass::add([
+                'UF_TASK_ID' => $taskId,
+                'UF_CREATED_BY' => $creatorId,
+                'UF_CREATED_DATE' => $createdDate,
+            ]);
+        } catch (Exception $e) {
+
+        }
     }
 
     /**
