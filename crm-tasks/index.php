@@ -59,6 +59,7 @@ while ($item = $dbDealRes->GetNext()) {
         'DESCRIPTION' => 'описание: ' . $item['COMMENTS'],
         'CREATED_BY' => $item['ASSIGNED_BY_ID'],
         'RESPONSIBLE_ID' => $item['ASSIGNED_BY_ID'],
+        'UF_CRM_TASK' => 'D_' . $item['ID']
     ]);
     $res = $task->save();
 }

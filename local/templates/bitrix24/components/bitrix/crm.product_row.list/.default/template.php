@@ -774,10 +774,10 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 				<td class="crm-item-cell crm-item-name">
 					<span class="crm-item-cell-text"<?= ($bInitEditable && empty($fixedProductName)) ? '' : ' style="display: none;"' ?>>
 						<span class="crm-table-name-left">
-							<span class="crm-item-move-btn"></span><span id="<?= ($rowID.'_NUM') ?>" class="crm-item-num"><?=($i+1).'.'?></span>222
+							<span class="crm-item-move-btn"></span><span id="<?= ($rowID.'_NUM') ?>" class="crm-item-num"><?=($i+1).'.'?></span>
 						</span>
 						<span class="crm-item-inp-wrap">
-							saassa<input id="<?=$rowID.'_PRODUCT_NAME'?>" class="crm-item-name-inp" type="text" value="<?=$htmlValues['PRODUCT_NAME']?>" autocomplete="off"/><span class="crm-item-inp-btn<? echo ($productID > 0) ? ' crm-item-inp-arrow' : ($bCanAddProduct ? ' crm-item-inp-plus' : ''); ?>"></span>
+							<input id="<?=$rowID.'_PRODUCT_NAME'?>" class="crm-item-name-inp" type="text" value="<?=$htmlValues['PRODUCT_NAME']?>" autocomplete="off"/><span class="crm-item-inp-btn<? echo ($productID > 0) ? ' crm-item-inp-arrow' : ($bCanAddProduct ? ' crm-item-inp-plus' : ''); ?>"></span>
 						</span>
 					</span>
 					<span class="crm-item-cell-view"<?= ($bInitEditable && empty($fixedProductName)) ? ' style="display: none;"' : '' ?>>
@@ -911,7 +911,6 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 							<span class="crm-item-move-btn"></span><span id="<?= ($rowIdPrefix.'#N#_NUM') ?>" class="crm-item-num"></span>
 						</span>
 						<span class="crm-item-inp-wrap">
-                            .'sssss'
 							<input id="<?= ($rowIdPrefix.'#N#_PRODUCT_NAME') ?>" class="crm-item-name-inp" type="text" value=""  autocomplete="off"/><span class="crm-item-inp-btn"></span>
 						</span>
 					</span>

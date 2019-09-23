@@ -25,3 +25,16 @@ function isPageTaskDetail($url)
     preg_match($regExpr, $url, $matches);
     return count($matches) > 0;
 }
+
+function getBindDealId(array $arUfCrmTask): int
+{
+    $dealId = 0;
+    if (count($arUfCrmTask)) {
+        foreach ($arUfCrmTask as $crmBind) {
+            if (substr($crmBind, 0, 1) == 'D') {
+                $dealId = (int)substr($crmBind, 2);
+            }
+        }
+    }
+    return $dealId;
+}
